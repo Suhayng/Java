@@ -46,16 +46,19 @@ class userIDException extends Exception {
 }
 
 class A { // 실행 클래스
-	String season; 	// 봄, 여름, 가을, 겨울 ( 예외 발생: 봄, 여름 , 가을, 겨울만 입력하세요 )
-	String week;	// 월,화,수,목,금,토,일 ( 예외 발생 : 월, 화, 수, 목, 금, 토, 일만 입력하세요 )
-	int scoreKor;	// 0 ~ 100 값만 입력 ( 예외 발생 :  0 ~ 100까지 정수만 입력하세요 )
-	int scoreEng;	// 0 ~ 100 값만 입력 ( 예외 발생 :  0 ~ 100까지 정수만 입력하세요 )
-	String userID;	// 12자 이상 20자 사이의 문자 ( 예외 발생 : 12자 이상 20자 사이의 문자만 넣으세요 )
+	// private : 캡슐화, 객체 생성 후 바로 접근 하지 못하도록 설정
+		// 생성자, setter <== 제어후 필드의 값을 할당
+	
+	private String season; 	// 봄, 여름, 가을, 겨울 ( 예외 발생: 봄, 여름 , 가을, 겨울만 입력하세요 )
+	private String week;	// 월,화,수,목,금,토,일 ( 예외 발생 : 월, 화, 수, 목, 금, 토, 일만 입력하세요 )
+	private int scoreKor;	// 0 ~ 100 값만 입력 ( 예외 발생 :  0 ~ 100까지 정수만 입력하세요 )
+	private int scoreEng;	// 0 ~ 100 값만 입력 ( 예외 발생 :  0 ~ 100까지 정수만 입력하세요 )
+	private String userID;	// 12자 이상 20자 사이의 문자 ( 예외 발생 : 12자 이상 20자 사이의 문자만 넣으세요 )
 
 	
 	
 	void checkSeason (String season) throws seaonException {
-		if (season != "봄" ) {
+		if (season != "봄" && season != "여름" && season != "가을" && season != "겨울" ) {
 			throw new seaonException("예외 발생: 봄, 여름 , 가을, 겨울만 입력하세요"); 
 		} else {
 			System.out.println("정상적으로 잘 입력 되었습니다.");
@@ -67,7 +70,7 @@ class A { // 실행 클래스
 	
 	
 	void  checkWeek (String week) throws weekException {
-		if (season != "월"||season != "화"||season != "수"||season != "목"||season != "금"||season != "토"||season != "일") {
+		if (week != "월" && week != "화" && week != "수" && week != "목" && week != "금" && week != "토" && week != "일") {
 			throw new weekException("예외 발생 : 월, 화, 수, 목, 금, 토, 일만 입력하세요 ");
 		} else {
 			System.out.println("정상적으로 잘 입력 되었습니다.");
@@ -78,7 +81,7 @@ class A { // 실행 클래스
 
 	
 	void  checkscoreKor (int scoreKor) throws scoreKorException {
-		if (scoreKor < 0 ) {
+		if (scoreKor < 0 ) {	// 두 가지 || 로 묶으면 됨.
 			throw new scoreKorException("예외 발생 :  0 ~ 100까지 정수만 입력하세요 ");
 		} else if (scoreKor > 100) {
 			throw new scoreKorException("예외 발생 :  0 ~ 100까지 정수만 입력하세요 ");
@@ -146,7 +149,6 @@ public class UserException_EX {
 		    try {
 				a.checkscoreKor(100);
 			} catch (scoreKorException e1) {
-				// TODO Auto-generated catch block
 				System.out.println(e1.getMessage());
 			}
 		    
@@ -155,7 +157,6 @@ public class UserException_EX {
 		    try {
 				a.checkscoreEng(-2);
 			} catch (scoreEngException e1) {
-				// TODO Auto-generated catch block
 				System.out.println(e1.getMessage());
 			}
 			
