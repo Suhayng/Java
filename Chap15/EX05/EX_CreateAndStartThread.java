@@ -18,10 +18,10 @@ class NameThread extends Thread {
 	
 	@Override
 	public void run() {
-		String[] nArray = {"이름", "나이", "국어", "영어", "수학"};
+		String[] nArray = {"T_1", "이름", "나이", "국어", "영어", "수학"};
 		try {Thread.sleep(10);} catch (InterruptedException e) {}
 		for (int i = 0; i < nArray.length; i++) {
-			System.out.println(nArray[i]);
+			System.out.println(nArray[i] + "\t");
 			try {Thread.sleep(200);} catch (InterruptedException e) {}
 		}
 	};
@@ -32,7 +32,7 @@ class HongThread implements Runnable {
 	public void run() {
 		String[] hArray = {"홍길동", "40", "100", "70", "50"};
 		for (int i = 0; i < hArray.length; i++) {
-			System.out.print(hArray[i] + " ");
+			System.out.print(hArray[i] + "\t");
 			try {Thread.sleep(200);} catch (InterruptedException e) {}
 		}
 	}
