@@ -52,6 +52,7 @@ public class TwoGenericArguments {
 		KeyValue <String, Void> kv4 = new KeyValue();
 		kv4.setKey("키 값만 사용");
 //		kv4.setValue(11111); 	// 사용 불가
+		
 		System.out.println(kv4.getKey());
 		
 	}

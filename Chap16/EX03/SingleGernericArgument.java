@@ -6,7 +6,8 @@ package Chap16.EX03;
 				-- A ~ Z 임의로 넣을 수 있다.
 				   wrapper 클래스 : 기본 타입을 객체화 시켜 놓은 클래스
 				   int ( 기본 타입 ) ==> Integer (객체, boolean ==> Boolean, char ==> Charter,
-				   double ==> Double, float ==> Float )
+				   double ==> Double, float ==> Float 
+				   byte ==> byte, short, ==> Short, long ==> Long )
 */ 
 
 // 제너릭 클래스 
