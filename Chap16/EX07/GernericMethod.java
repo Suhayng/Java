@@ -13,7 +13,7 @@ class GenericMethod {	// 일반 클래스
 	public <T> boolean method2 (T t1, T t2) { // 제너릭 메소드 : 1개
 		return t1.equals(t2);			// 두 값을 비교 true, false 리턴
 										// 기본 자료형일 때는 값을 비교, 참조 자료형일 때는 객체의 주소를 비교
-										// String 일 경우, 값을 비교
+										// String 일 경우, 값을 비교. Integer, Double equals가 재정의 되어 있다.
 	}
 	public <K, V> void method3 (K k, V v) {   // 제너릭 메소드 : 2개
 		System.out.println(k + " : " + v);

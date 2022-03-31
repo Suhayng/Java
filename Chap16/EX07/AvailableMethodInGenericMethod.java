@@ -9,7 +9,6 @@ class A {
 	}
 }
 
-
 public class AvailableMethodInGenericMethod {
 	public static void main(String[] args) {
 		A a = new A();
