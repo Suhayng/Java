@@ -52,7 +52,7 @@ public class FileInputStream_1_1 {
 		try {
 			is2 = new FileInputStream(inFile);
 			
-			while ( (data2 = is.read()) != -1) {       //IOException
+			while ( (data2 = is2.read()) != -1) {       //IOException
 				System.out.println((char) data);
 			}
 					

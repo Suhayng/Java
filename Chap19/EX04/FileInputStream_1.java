@@ -24,17 +24,21 @@ public class FileInputStream_1 {
 		
 		// 파일의 내용을 출력
 		
-		int data;
+		
 		
 		// UTF-8 : 영어 1byte, 한글 3byte
 		// MS949 : 영어 1byte, 한글 2byte
 		// EUC-KR : 영어 1byte, 한글 2byte
 		// UTF-16 : 영어 2byte, 한글 2byte, 첫번째 BOM 2byte <- 식별자
 		
-		
+		/* JAVA에서 줄바꿈 처리
+		 	- UNIX 	  : \n
+		 	- windows : \r\n		<==	\r 은 생략 해도 됨.		-콘솔이나 메모장에서 enter : \r\n
+		 	- MAC 	  : \r
+		*/
 		// 한 바이트 데이터를 읽어서 char로 변환 후 출력	
 												//read() 한 바이트를 읽어들임
-		System.out.println((char)is.read());
+		System.out.println(is.read());
 		System.out.println((char)is.read());
 		System.out.println((char)is.read());
 		System.out.println((char)is.read());
@@ -58,10 +62,16 @@ public class FileInputStream_1 {
 		
 		InputStream is1 = new FileInputStream(inFile);
 		
-		int data1;
-		while((data1 = is1.read()) != -1) {
-			System.out.println((char) data1);
+		int data;
+		while((data = is1.read()) != -1) {		// 마지막 값까지 계속 순환	(-1 : 값이 더 이상 존재하지 않으면 -1)	
+			System.out.println((char) data);
 		}
+			//중요 : is1.read() : 1byte를 읽어 들임
+			//FileInputStream 은 반드시 index 0 번부터 읽어 들임
+					//FileRandomAccess를 사용해서 임의의 index에서 읽어 들임
+		
+		System.out.println();
+		
 		
 	}
 }
